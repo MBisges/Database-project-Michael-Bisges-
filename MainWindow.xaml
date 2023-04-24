@@ -7,13 +7,49 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <ListBox x:Name="persons"  Margin="400,0,0,10"/>
-        <Button Content="Save person" HorizontalAlignment="Left" Margin="69,110,0,0" VerticalAlignment="Top" Click="Save_New_person"/>
-        <TextBox x:Name="FirstNametxt" HorizontalAlignment="Left" Margin="69,30,0,0" TextWrapping="Wrap"  Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBlock HorizontalAlignment="Left" Margin="69,9,0,0" TextWrapping="Wrap" Text="First Name?" VerticalAlignment="Top"/>
-        <TextBox x:Name="LastNametxt" HorizontalAlignment="Left" Margin="69,73,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBlock HorizontalAlignment="Left" Margin="69,53,0,0" TextWrapping="Wrap" Text="Last Name?" VerticalAlignment="Top"/>
-        <Button Content="Load DataBase" HorizontalAlignment="Left" Margin="69,149,0,0" VerticalAlignment="Top" Click="Load_DataBase"/>
+        <!--<ListBox x:Name="Display"  Margin="400,0,0,10"/> -->
+
+
+
+        <Button Content="Save New Object" HorizontalAlignment="Left" Margin="17,160,0,0" VerticalAlignment="Top" Click="Save_New_Object"/>
+        <TextBox x:Name="firstp" HorizontalAlignment="Left" Margin="17,30,0,0" TextWrapping="Wrap"  Text="{Binding ElementName=Display ,Path=SelectedItem.CustomerID}" VerticalAlignment="Top" Width="120" />
+        <TextBlock HorizontalAlignment="Left" Margin="17,9,0,0" TextWrapping="Wrap" Text="First parameter" VerticalAlignment="Top"/>
+        <TextBox x:Name="secondp" HorizontalAlignment="Left" Margin="17,74,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="17,53,0,0" TextWrapping="Wrap" Text="Second parameter" VerticalAlignment="Top"/>
+        <Button Content="Load DataBase" HorizontalAlignment="Left" Margin="17,197,0,0" VerticalAlignment="Top" Click="Load_DataBase"/>
+        <ComboBox x:Name="SelectTable" HorizontalAlignment="Left" Margin="17,112,0,0" VerticalAlignment="Top" Width="120" SelectedValuePath="name" SelectedValue="Customers">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock x:Name="ssTable" Text="{Binding name}"  />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+
+        </ComboBox>
+        <TextBox x:Name="thirdp" HorizontalAlignment="Left" Margin="168,30,0,0" TextWrapping="Wrap"  Text="" VerticalAlignment="Top" Width="120" />
+
+
+        <TextBox x:Name="fourthp" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Text="" Margin="168,74,0,0" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="168,9,0,0" TextWrapping="Wrap" Text="Third parameter" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="168,56,0,0" TextWrapping="Wrap" Text="Fourth parameter" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="168,107,0,0" TextWrapping="Wrap" Text="Fifth parameter (if needed)" VerticalAlignment="Top"/>
+        <TextBox x:Name="fifthp" HorizontalAlignment="Left" Margin="168,128,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <ListView  Margin="353,0,0,0" x:Name="Display">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" Width="40" x:Name="firstD"/>
+                    <GridViewColumn Header="" Width="100" x:Name="secondD"/>
+                    <GridViewColumn Header="" Width="100" x:Name="thirdD"/>
+                    <GridViewColumn Header="" Width="100" x:Name="fourthD"/>
+                    <GridViewColumn Header="" Width="100" x:Name="fifthD"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="Update" HorizontalAlignment="Left" Margin="17,229,0,0" VerticalAlignment="Top" Click="Update_Object"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="17,261,0,0" VerticalAlignment="Top" Click="Delete_object"/>
+        <Button Content="Pre Made join 1" HorizontalAlignment="Left" Margin="17,294,0,0" VerticalAlignment="Top" Click="PreMadeJoinOne"/>
+        <Button Content="Pre Made Subquery with join" HorizontalAlignment="Left" Margin="17,365,0,0" VerticalAlignment="Top" Click="PreMadeSub"/>
+        <Button Content="Pre Made join 1" HorizontalAlignment="Left" Margin="17,294,0,0" VerticalAlignment="Top" Click="PreMadeJoinOne"/>
+        <Button Content="Pre Made join 2" HorizontalAlignment="Left" Margin="17,332,0,0" VerticalAlignment="Top" Click="PreMadeJoinTwo"/>
 
     </Grid>
 </Window>
